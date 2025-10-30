@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="U-XA-Compatible" content="IE-edge">
+	<link rel="shortcut icon" href="images/Logopng64.png" type="image/x-icon">
+	<link rel="stylesheet" href ="styles/main.css">
+    <link rel="stylesheet" href ="styles/header.css">
+	<link rel="stylesheet" href ="styles/.css">
+	
+    <title>RF Caxias</title>
+</head>
+<body>
+	<header> 
+        <div class="header-container">
+            <div class="logo-area">           
+                <a href="index.html"><img src="images/Logopng.png" alt="Logo Recicla Fácil Caxias"></a>            
+                <a href="index.html"><h1>Recicla Fácil Caxias</h1></a>
+            </div>
+    
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#">Pontos de coleta</a></li>
+                    <li><a href="#">Impactos</a></li>
+                    <li><a href="#">Sobre</a></li> 
+                </ul>
+            </nav>
+        </div>
+	</header>
+
+	<main>
+		<div id="map" style="width: 60%; height: 400px;"></div>
+	</main>
+
+
+	<footer>
+		
+	</footer>
+
+	<script>
+		function initMap() {
+		  
+		  const centroCaxias = { lat: -29.1681, lng: -51.1795 };
+	
+		  const map = new google.maps.Map(document.getElementById("map"), {
+			zoom: 13,
+			center: centroCaxias,
+			mapId: '39fd83aa8647b98f70160706' // MAP ID
+		  });
+
+		  //ÍCONE PERSONALIZADO 
+		  const iconePersonalizado = {
+			url: 'https://i.postimg.cc/D06VBmb5/Marcador-Eco-2.png', // LINK DIRETO DA IMAGEM
+			
+			scaledSize: new google.maps.Size(35, 35) // (largura, altura do ícone)
+		  };
+		
+		  //PONTOS DE COLETA FIXOS
+		  const pontosDeColeta = [ 
+			{ lat: -29.1654, lng: -51.1792, nome: "Endereço:" }, // (Adicione os locais reais da ABREE aqui)
+			{ lat: -29.1708, lng: -51.1834, nome: "Ponto Exemplo 2 (Substituir)" }, // (Adicione os locais reais da ABREE aqui)
+		  ];
+		  
+		  const infoWindow = new google.maps.InfoWindow();
+	
+		  // Loop que cria cada marcador com ícone
+		  pontosDeColeta.forEach(ponto => {
+			
+			const marker = new google.maps.Marker({
+			  position: { lat: ponto.lat, lng: ponto.lng },
+			  map: map,
+			  title: ponto.nome,
+			  icon: iconePersonalizado // ÍCONE PERSONALIZADO
+			});
+	
+			// Clique para mostrar o nome
+			marker.addListener('click', () => {
+			  infoWindow.setContent(ponto.nome);
+			  infoWindow.open(map, marker);
+			});
+		  });
+		}
+	  </script>
+	
+	  <script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnqZREgtf20Ll658DaOmAyeEd0_sDn1UY&callback=initMap">
+	  </script>
+
+</body>
+</html>

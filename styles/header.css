@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    /* Estilização do cabeçalho */
+header{
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    color: black;
+}
+    /* Links */
+a{
+    text-decoration: none;
+    color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+    /* Listas */
+ul {
+    list-style: none;   /* remove os pontos marcadores de listagem */
+    padding: 0;         
+    margin: 0;          
+}
+    /* Container do header */
+.header-container{
+    display: flex;
+    justify-content: space-between; /* Logo a esquerda e menu a direita */
+    align-items: center;
+    margin: 0 40px;
+}
+    /* Área do logo */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* espaçamento entre a imagem e o título */
+}
+  
+.logo-area img {
+    height: 40px;
+    width: auto;
+}
+  
+.logo-area h1 {
+    font-size: 2.0rem;
+    font-weight: 700;
+    color: black;
+}
+  
+    /* Menu de navegação */
+.nav-menu {
+    display:flex;
+    justify-content: space-between;
+    font-size: 1.0rem;
+    font-weight: 500;
+    gap: 20px;
+}
+.nav-menu ul {
+    display:flex;
+    padding: 10px;
+    gap: 30px; /* espaçamento entre os itens */
+}
+  
+.nav-menu a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 700;
+    transition: color 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+  
+.nav-menu a:hover {
+    background-color: #a5db9c;
+    color:  #005906; 
+    transition: all 0.3s ease;
+    transform: scale(1.05);
+}
