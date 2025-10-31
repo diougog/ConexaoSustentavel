@@ -121,6 +121,13 @@ main {
     transition: background-color 0.3s;
 }
 
+@media (max-width: 600px) {
+    .botao-ver-pontos {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
 .botao-ver-pontos:hover {
     background-color: #12b61d;
     transform: scale(1.1);
