@@ -5,9 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="U-XA-Compatible" content="IE-edge">
 	<link rel="shortcut icon" href="images/Logopng64.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<link rel="stylesheet" href ="styles/main.css">
     <link rel="stylesheet" href ="styles/header.css">
 	<link rel="stylesheet" href ="styles/.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+
 	
     <title>RF Caxias</title>
 </head>
@@ -21,71 +25,86 @@
     
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="#">Pontos de coleta</a></li>
-                    <li><a href="#">Impactos</a></li>
-                    <li><a href="#">Sobre</a></li> 
+					<li><a href="index.html">Início</a></li>
+                    <li><a href="pontos.html">Pontos de coleta</a></li>
+                    <li><a href="sobre.html">Sobre</a></li> 
                 </ul>
             </nav>
         </div>
 	</header>
 
 	<main>
-		<div id="map" style="width: 60%; height: 400px;"></div>
+
+    <section class="hero">
+        <h2>Bem-vindo ao Recicla Fácil Caxias</h2>
+        <p>Informações sobre reciclagem, descarte correto de resíduos e pontos de coleta na cidade</p>
+    </section>
+
+
+	
+    <section class="secao-lixo">
+    <div class="lixo-container">
+        <div class="lixo-texto">
+            <h2>O que é Lixo Eletrônico?</h2>
+            <p>Lixo eletrônico é todo resíduo proveniente de equipamentos elétricos e eletrônicos, como celulares, computadores, eletrodomésticos e baterias. O descarte inadequado desses resíduos pode causar sérios impactos ao meio ambiente e à saúde humana.</p>
+        </div>
+        <div class="lixo-imagem">
+            <img src="images/lixotelainicial.png" alt="Lixo eletrônico" />
+        </div>
+    </div>
+</section>
+	
+	<section class="secao-impactos">
+		<div class="impactos-container">
+			<div class="impactos-imagem">
+				<img src="images/impactoslixo.png" alt="Impactos do lixo eletrônico" />
+			</div>
+
+			<div class="impactos-texto">
+        		<h2>Impactos do Lixo Eletrônico</h2>
+        		<p>Quando descartados de forma incorreta, os resíduos eletrônicos podem causar danos graves ao meio ambiente! 
+				</p>
+				<p>Eles liberam substâncias tóxicas,
+			 	como chumbo, mercúrio e cádmio, que poluem o solo e a água, prejudicando plantas, animais e pessoas.</p>
+        		<p>
+            	Reciclar corretamente ajuda a aproveitar materiais valiosos, reduz a mineração de recursos
+            	naturais e diminui a poluição, contribuindo com um futuro mais sustentável.
+        		</p>
+			</div>
+			
+	</section>
+	
+    
+	
+	<section class="secao-pontos">
+        <h2>Pontos de Coleta</h2>
+        <p>Encontre locais próximos onde você pode descartar seu lixo eletrônico de maneira segura.</p>
+        <a href="pontos.html" class="botao-ver-pontos">
+        <i class="fa-solid fa-map-location-dot"></i> Ver Pontos de Coleta
+    </a>
+    </section>
+	
+
 	</main>
 
 
-	<footer>
-		
-	</footer>
+	    <footer>
+        <div class="footer-inline">
+            <div class="footer-left">
+                <img src="images/Logopng.png" alt="Logo RF Caxias">
+            </div>
+            <div class="footer-center">
+                <a href="index.html">Início</a>
+                <a href="pontos.html">Pontos de coleta</a>
+                <a href="sobre.html">Sobre</a>
+            </div>
+            <div class="footer-right">
+                <span>Recicla Fácil Caxias © 2025</span>
+            </div>
+        </div>
+    </footer>
 
-	<script>
-		function initMap() {
-		  
-		  const centroCaxias = { lat: -29.1681, lng: -51.1795 };
 	
-		  const map = new google.maps.Map(document.getElementById("map"), {
-			zoom: 13,
-			center: centroCaxias,
-			mapId: '39fd83aa8647b98f70160706' // MAP ID
-		  });
-
-		  //ÍCONE PERSONALIZADO 
-		  const iconePersonalizado = {
-			url: 'https://i.postimg.cc/D06VBmb5/Marcador-Eco-2.png', // LINK DIRETO DA IMAGEM
-			
-			scaledSize: new google.maps.Size(35, 35) // (largura, altura do ícone)
-		  };
-		
-		  //PONTOS DE COLETA FIXOS
-		  const pontosDeColeta = [ 
-			{ lat: -29.1654, lng: -51.1792, nome: "Endereço:" }, // (Adicione os locais reais da ABREE aqui)
-			{ lat: -29.1708, lng: -51.1834, nome: "Ponto Exemplo 2 (Substituir)" }, // (Adicione os locais reais da ABREE aqui)
-		  ];
-		  
-		  const infoWindow = new google.maps.InfoWindow();
-	
-		  // Loop que cria cada marcador com ícone
-		  pontosDeColeta.forEach(ponto => {
-			
-			const marker = new google.maps.Marker({
-			  position: { lat: ponto.lat, lng: ponto.lng },
-			  map: map,
-			  title: ponto.nome,
-			  icon: iconePersonalizado // ÍCONE PERSONALIZADO
-			});
-	
-			// Clique para mostrar o nome
-			marker.addListener('click', () => {
-			  infoWindow.setContent(ponto.nome);
-			  infoWindow.open(map, marker);
-			});
-		  });
-		}
-	  </script>
-	
-	  <script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnqZREgtf20Ll658DaOmAyeEd0_sDn1UY&callback=initMap">
-	  </script>
 
 </body>
 </html>

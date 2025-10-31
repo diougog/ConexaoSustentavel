@@ -1,11 +1,248 @@
 body{
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #F1FDF5;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+main {
+    flex:1;
+}
+
 #map{
     margin: 20px auto;
     border: 2px solid #ccc;
     border-radius: 8px;
+}
+
+
+
+.conteudo {
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.conteudo h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #005906;
+}
+
+.conteudo p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 15px;;
+}
+
+.hero {
+    text-align: center;
+    width: 100%;
+    padding: 40px 20px;
+    background: linear-gradient(135deg,#a5db9c,#12b61d);
+    color: #fff;
+    
+    
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.secao-principal,
+.secao-pontos {
+    max-width: 1000px;
+    margin: 15px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.secao-principal {
+    background: linear-gradient(135deg,#a5db9c,#12b61d);
+    color: #fff;
+    text-align: center;
+}
+
+.secao-lixo h2,
+.secao-impactos h2,
+.secao-pontos h2 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.secao-lixo p,
+.secao-impactos p,
+.secao-pontos p {
+    line-height: 1.6;
+}
+
+.secao-pontos{
+    text-align: center;
+}
+
+.botao-ver-pontos {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 40px 200px;
+    background-color: #2e7d32;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.botao-ver-pontos:hover {
+    background-color: #12b61d;
+    transform: scale(1.1);
+}
+
+.lixo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 1000px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+}
+
+.lixo-texto {
+    flex: 1 1 400px;
+}
+
+.lixo-imagem {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.lixo-imagem img {
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.impactos-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 1000px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+}
+
+.impactos-texto {
+    flex: 1 1 400px;
+}
+
+.impactos-imagem {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.impactos-imagem img {
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+
+footer {
+    background: rgb(2, 117, 2);
+    padding: 15px 20px;
+}
+
+.footer-left img {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(1px 1px 0 #fff)
+            drop-shadow(-1px -1px 0 #fff)
+            drop-shadow(-1px 1px 0 #fff)
+            drop-shadow(1px -1px 0 #fff);
+}
+
+
+.footer-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-left img {
+    height: 40px;
+    width: auto;
+}
+
+.footer-center a {
+    margin: 0 12px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.footer-center a:hover {
+    color: #12b61d;
+}
+
+.footer-right span {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+    .footer-inline {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-center a {
+        display: inline-block;
+        margin: 5px 10px;
+    }
 }
