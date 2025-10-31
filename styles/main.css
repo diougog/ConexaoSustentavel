@@ -37,6 +37,13 @@ main {
     color: #005906;
 }
 
+.conteudo h3 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: #2e7d32;
+}
+
 .conteudo p {
     line-height: 1.6;
     font-size: 1.1rem;
@@ -189,6 +196,71 @@ main {
     max-width: 100%;
     border-radius: 8px;
     object-fit: cover;
+}
+
+.sobre-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    
+    
+}
+
+.sobre-conteudo {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sobre-texto {
+    flex: 1 1 55%;
+    text-align: justify;
+}
+
+.sobre-texto p {
+    max-width: 95%;
+}
+
+.sobre-imagem img {
+    width: 350px;
+    max-width: 100%;
+    border-radius: 8px;
+    
+}
+
+@media (max-width: 768px) {
+    .sobre-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-texto {
+        flex-basis: 100%;
+    }
+
+    .sobre-imagem img {
+        width: 250px;
+        margin-top: 20px;
+    }
+}
+
+.aviso-legal {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #555;
+    font-style: italic;
+}
+
+.sobre-contato {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    line-height: 1.6;
 }
 
 
